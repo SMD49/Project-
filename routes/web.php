@@ -14,9 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $product1 = array(
+        'product_name'=> 'Product 1',
+        'product_desc'=> 'This is a product I want to sell. It is a good product and will be best selling in upcoming days.This is a product I want to sell. It is a good product and will be best selling in upcoming days.This is a product I want to sell. It is a good product and will be best selling in upcoming days.This is a product I want to sell. It is a good product and will be best selling in upcoming days.This is a product I want to sell. It is a good product and will be best selling in upcoming days.This is a product I want to sell. It is a good product and will be best selling in upcoming days.This is a product I want to sell. It is a good product and will be best selling in upcoming days.'
+    );
+    $product2 = array(
+        'product_name'=> 'Product 2',
+        'product_desc'=> 'This is a product I want to sell. It is a good product and will be best selling in upcoming days.This is a product I want to sell. It is a good product and will be best selling in upcoming days.This is a product I want to sell. It is a good product and will be best selling in upcoming days.This is a product I want to sell. It is a good product and will be best selling in upcoming days.This is a product I want to sell. It is a good product and will be best selling in upcoming days.This is a product I want to sell. It is a good product and will be best selling in upcoming days.This is a product I want to sell. It is a good product and will be best selling in upcoming days.'
+    );
+    $product3 = array(
+        'product_name'=> 'Product 3',
+        'product_desc'=> 'This is a product I want to sell. It is a good product and will be best selling in upcoming days.This is a product I want to sell. It is a good product and will be best selling in upcoming days.This is a product I want to sell. It is a good product and will be best selling in upcoming days.This is a product I want to sell. It is a good product and will be best selling in upcoming days.This is a product I want to sell. It is a good product and will be best selling in upcoming days.This is a product I want to sell. It is a good product and will be best selling in upcoming days.This is a product I want to sell. It is a good product and will be best selling in upcoming days.'
+    );
+    $products_list = array($product1, $product2, $product3);
+    return view('products',['products' => $products_list] );
 });
-
-Route::get('/products/', function () {
-    return view('products');
+Route::get('/product', function () {
+    return view('product');
 });
