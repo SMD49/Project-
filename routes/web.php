@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +32,18 @@ Route::get('/', function () {
 });
 Route::get('/product', function () {
     return view('product');
+});
+
+Route::get('/create_product', function(){
+    Product::create([
+        'product_name' => 'Mobile',
+        'product_desc' => ' This is smart phone of latest model',
+        'price' => '25000',
+        'image' => ''
+    ]);
+});
+
+Route::get('/get_product',function(){
+    $products = Product::get();
+    return $products;
 });
